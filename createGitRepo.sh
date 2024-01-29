@@ -26,7 +26,8 @@ create_github_repo() {
         echo "Repository $REPO_NAME already exists on GitHub."
     else
         # Create the repository using the GitHub API
-        response=$(curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" -d '{"name":"'"$REPO_NAME"'"}' "https://api.github.com/user/repos")
+        response=$(curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" -d '{"name":"'"$REPO_NAME"'"}'
+        "https://api.github.com/user/repos")
 
         if [[ "$response" == *"errors"* ]];
         then
