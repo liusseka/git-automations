@@ -12,17 +12,18 @@ perform_git_operations() {
     # Commit changes with the provided message
     git commit -m "$COMMIT_MESSAGE"
 
+    # Get the name of the current directory
+    DIR_NAME=$(basename "$(pwd)")
+
+    # Set the repository name to be the same as the directory name
+    REPO_NAME="$DIR_NAME"
+
     # Check if the repository exists on GitHub
     response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$REPO_NAME")
 
     if [ $response -eq 404 ];
     then
         echo "Repository $REPO_NAME does not exists on GitHub. Creating one...."
-        # Get the name of the current directory
-        DIR_NAME=$(basename "$(pwd)")
-
-        # Set the repository name to be the same as the directory name
-        REPO_NAME="$DIR_NAME"
 
         # Create the repository using the GitHub API
         response=$(curl -s -X POST -H "Authorization: token $GITHUB_TOKEN" -d '{"name":"'"$REPO_NAME"'"}'
