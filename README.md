@@ -20,7 +20,7 @@ The script was originally created to work on a linux machine, but will be update
 #### Setting variables and script to bash environment
 Remember, you have to cd to this repository before performing the following actions
 
-**Step 1: Add Git Username into your bash environment**
+**1. Add Git Username into your bash environment**
 ```
 echo 'export GIT_USERNAME=YOUR_GIT_USERNAME' >> ~/.bashrc
 ```
@@ -28,7 +28,7 @@ Here is an example:
 ```
 echo 'export GIT_USERNAME=Charles123' >> ~/.bashrc
 ```
-**Step 2: Add git email into your bash environment**
+**2. Add git email into your bash environment**
 ```
 echo 'export GIT_EMAIL=YOUR_GIT_EMAIL' >> ~/.bashrc
 ```
@@ -36,7 +36,7 @@ Here is an example:
 ```
 echo 'export GIT_USERNAME=Charles123@gmail.com' >> ~/.bashrc
 ```
-**Step 3: Add git token into your bash environment**
+**3. Add git token into your bash environment**
 ```
 echo 'export GIT_EMAIL=YOUR_GIT_GITHUB_TOKEN' >> ~/.bashrc
 ```
@@ -44,14 +44,22 @@ Here is an example:
 ```
 echo 'export GITHUB_TOKEN=github_pat_1144JHSHsdffsdJDDSDSD_SDFSHFSJHDjhjjshhasdjhsLKASDKHJ' >> ~/.bashrc
 ```
-**Step 4: To run the script, you have to run `./git-automations [OPTIONS]` in the current directory. To make it 
-possible to run the script from any location in your local machine, we need to Add the script folder to environmental 
-path by running the following command.**
+**Step 4: Running the script,**
+
+This command `./git-automations [OPTIONS]` runs the script in the current directory. 
+
+To make it possible to run the script from any location in your local machine, you need to add the script folder to 
+your environmental path by running the following command.
 ```
 export PATH=$PATH:$(pwd)
 ```
-**Step 5: You can run the script using the command `git-automations [OPTIONS]`. However, to avoid having to type the 
-full name, we can create an alias command that is short and easy to remember.**
+**5. Adding an alias `run-git` for running `git-automations`.**
+
+Up to this point, we have to run the script like this `git-automations [OPTIONS]` which makes it tiresome to retype 
+the command. 
+
+However, to avoid having to type the full command, we can create an alias command that is short and 
+easy to remember, and we will call it `run-git`
 ```
 echo "alias run-git='git-automations'" >> ~/.bashrc
 ```
@@ -63,9 +71,11 @@ handling major tasks in git version control. The options include the following:
 + commit
 + delete
 
-#### How to use the above git options
-Lets say you want to create a new repository both locally and remotely, be able to commit and push changes, delete a 
-repository. You will need to run the command alias we have set for our script using one of the three options.
+#### How to use the above git options with `run-git`
+Let's say you want to create a new repository both locally and remotely, be able to commit and push changes, delete a 
+repository. 
+
+You will need to run the command alias we have set for our script using one of the three options.
 
 **1. Creating a new repository.**
 
