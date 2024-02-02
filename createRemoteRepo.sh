@@ -18,10 +18,5 @@ creatingRemoteRepo() {
     git remote add origin "https://$GITHUB_TOKEN@github.com/$GIT_USERNAME/$REPO_NAME.git"
     pushingToRemote
   fi
-
-  # Setting remote branch tracking
-  git branch --set-upstream-to=origin/main main
-  git fetch --all
-
 }
 
