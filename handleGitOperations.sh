@@ -7,8 +7,8 @@ perform_git_operations() {
 
   # first we check if a remote repo exists, then create one
   # Get the current directory name
-  REPO_NAME=$(basename "$(pwd)")
-  response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$REPO_NAME")
+  CURRENT_REPO_NAME=$(basename "$(pwd)")
+  response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$CURRENT_REPO_NAME")
 
   if [ ! $response -ne 404 ];
   then
@@ -19,7 +19,7 @@ perform_git_operations() {
   fi
 
   # Add new files to the staging area
-  git remote set-url origin "https://$GITHUB_TOKEN@github.com/$GIT_USERNAME/$REPO_NAME.git"
+  git remote set-url origin "https://$GITHUB_TOKEN@github.com/$GIT_USERNAME/$CURRENT_REPO_NAME.git"
   git pull
   git add .
 
