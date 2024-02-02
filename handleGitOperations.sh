@@ -9,7 +9,6 @@ perform_git_operations() {
   # Get the current directory name
   REPO_NAME=$(basename "$(pwd)")
   response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$REPO_NAME")
-  echo "$response"
 
   if [ ! $response -ne 404 ];
   then
