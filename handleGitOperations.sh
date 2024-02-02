@@ -20,7 +20,7 @@ perform_git_operations() {
   fi
 
   # Add new files to the staging area
-  git remote add origin "https://$GITHUB_TOKEN@github.com/$GIT_USERNAME/$REPO_NAME.git"
+  git remote set-url origin "https://$GITHUB_TOKEN@github.com/$GIT_USERNAME/$REPO_NAME.git"
   git add .
 
   while true;
