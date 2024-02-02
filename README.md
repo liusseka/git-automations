@@ -1,3 +1,3 @@
-# James
+## git automations shell script
 
 This repository contains ...
