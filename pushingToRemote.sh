@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 pushingToRemote() {
-  git branch --set-upstream-to=origin/main main
+  git fetch
 
   git push -u origin main || {
     echo "Failed to push to remote."
