@@ -34,11 +34,11 @@ echo 'export GIT_EMAIL=YOUR_GIT_EMAIL' >> ~/.bashrc
 ```
 Here is an example:
 ```
-echo 'export GIT_USERNAME=Charles123@gmail.com' >> ~/.bashrc
+echo 'export GIT_EMAIL=Charles123@gmail.com' >> ~/.bashrc
 ```
 **3. Add git token into your bash environment**
 ```
-echo 'export GIT_EMAIL=YOUR_GIT_GITHUB_TOKEN' >> ~/.bashrc
+echo 'export GITHUB_TOKEN=YOUR_GIT_GITHUB_TOKEN' >> ~/.bashrc
 ```
 Here is an example:
 ```
@@ -71,7 +71,7 @@ handling major tasks in git version control. The options include the following:
 + commit
 + delete
 
-#### How to use the above git options with `run-git`
+#### Using `run-git` with [OPTIONS]
 Let's say you want to create a new repository both locally and remotely, be able to commit and push changes, delete a 
 repository. 
 
@@ -79,8 +79,7 @@ You will need to run the command alias we have set for our script using one of t
 
 **1. Creating a new repository.**
 
-To create a new repository, you will have to run the `run-git` command with the 
-   `create` option
+To create a new repository, you will have to run the `run-git` command with the `create` option
 ```
 run-git create
 ```
