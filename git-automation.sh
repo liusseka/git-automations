@@ -26,7 +26,7 @@ main() {
     check_and_configure_git
     create_github_repo
 
-  elif [ "$ACTION" = "commit" ];
+  elif [ "$ACTION" = "update" ];
   then
     echo "Relax, allow me to commit and push your changes"
     echo "But first, lets cross-check if this a git repo..."
@@ -42,7 +42,7 @@ main() {
 
   else
     echo "Invalid command argument provided"
-    echo "Specify either 'create' to create a new repo or 'commit' to commit your changes"
+    echo "Specify either 'create' to create a new repo or 'update' to update your changes"
   fi
 }
 

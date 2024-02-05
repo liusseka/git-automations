@@ -7,13 +7,12 @@ perform_git_operations() {
 
   # first we check if a remote repo exists, then create one
   # Get the current directory name
-  CURRENT_REPO_NAME=$(basename "$(pwd)")
   response=$(curl -s -o /dev/null -w "%{http_code}" "https://api.github.com/repos/$GIT_USERNAME/$CURRENT_REPO_NAME")
 
   if [ ! $response -ne 404 ];
   then
     echo "Repository $REPO_NAME does not exist on GitHub."
-    echo "Creating one...."
+    echo "Creating one now...."
     # Create the repository using the GitHub API
     creatingRemoteRepo
   fi

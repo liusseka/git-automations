@@ -15,7 +15,8 @@ The script was originally created to work on a linux machine, but will be update
 + Setting up git automations requires you to have these files locally. To do so, you must clone this repository and 
   follow these steps.
 + After cloning the repository locally, you need to set up environmental variables to be used in the automation 
-  process, including git username, git email, and github token.
+  process, including git username, git email, and GitHub token.
++ Using this requires that one must have a git token created for all repositories.
 
 #### Setting variables and script to bash environment
 Remember, you have to cd to this repository before performing the following actions
@@ -53,7 +54,7 @@ your environmental path by running the following command.
 ```
 export PATH=$PATH:$(pwd)
 ```
-**5. Adding an alias `run-git` for running `git-automations`.**
+**5. Adding an alias `rgit` for running `git-automations`.**
 
 Up to this point, we have to run the script like this `git-automations [OPTIONS]` which makes it tiresome to retype 
 the command. 
@@ -61,7 +62,7 @@ the command.
 However, to avoid having to type the full command, we can create an alias command that is short and 
 easy to remember, and we will call it `run-git`
 ```
-echo "alias run-git='git-automations'" >> ~/.bashrc
+echo "alias rgit='git-automations'" >> ~/.bashrc
 ```
 
 ### Using Git Automations
@@ -71,7 +72,7 @@ handling major tasks in git version control. The options include the following:
 + commit
 + delete
 
-#### Using `run-git` with [OPTIONS]
+#### Using `rgit` with [OPTIONS]
 Let's say you want to create a new repository both locally and remotely, be able to commit and push changes, delete a 
 repository. 
 
@@ -81,23 +82,25 @@ You will need to run the command alias we have set for our script using one of t
 
 To create a new repository, you will have to run the `run-git` command with the `create` option
 ```
-run-git create
+rgit create
 ```
 **2. Updating changes to an existing repository.**
 
 There are many commands we usually use in git to update changes made to a repository, including `git add  .`, `git commit -m "Commit Message"`, and `git push origin <branch>`. Most 
-of these commands are integrated into the `commit` option of this script. All you have to do is use the `run-git` 
+of these commands are integrated into the `update` option of this script. All you have to do is use the `rgit` 
 command with the `commit` option as follows.
 ```
-run-git commit
+rgit update
 ```
 **3. Deleting a Local and Remote Repository.**
 
 Deleting repos is rare, but you might find yourself having to delete one. 
 Use the command alias with the delete option as follows:
 ```
-run-git delete
+rgit delete
 ```
 ---------------------------------------------------
+
+
 Authored by:
 + Julius Charles
