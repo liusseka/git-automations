@@ -94,11 +94,13 @@ rgit update
 ```
 **3. Deleting a Local and Remote Repository.**
 
-Deleting repos is rare, but you might find yourself having to delete one. 
+Deleting repos is rare, but you might find yourself having to delete one. **NOTE:** `The delete option is still an issue,
+its still under development, so hang tight.`
 Use the command alias with the delete option as follows:
 ```
 rgit delete
 ```
+
 ---------------------------------------------------
 
 

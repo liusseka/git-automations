@@ -45,7 +45,7 @@ removeRepoDir() {
   response=$(curl -s -o /dev/null -w "%{http_code}" -X GET -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$USERNAME/$repo_to_delete)
   if [ "$RemoteDelete" = "Yes" ];
   then
-    if [ "$response" = "200" ];
+    if [ "$response" = "204" ];
     then
       echo "Removing remote repository"
       echo "It won't take long..."
